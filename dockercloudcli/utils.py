@@ -13,8 +13,11 @@ import yaml
 from dateutil import tz
 from tabulate import tabulate
 
-from exceptions import BadParameter, StreamOutputError
-from interpolation import interpolate_environment_variables
+try:
+    from exceptions import BadParameter, StreamOutputError
+except ImportError:
+    pass
+from .interpolation import interpolate_environment_variables
 
 SUPPORTED_FILENAMES = [
     'docker-cloud.yml',

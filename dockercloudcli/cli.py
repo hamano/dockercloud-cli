@@ -14,8 +14,6 @@ from . import __version__
 
 requests.packages.urllib3.disable_warnings()
 
-sys.stdout = codecs.getwriter('utf8')(sys.stdout)
-
 logging.basicConfig()
 
 dockercloud.user_agent = "dockercloud-cli/%s" % __version__
